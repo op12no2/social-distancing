@@ -1,4 +1,4 @@
-# social
+# social-distancing
 A demonstration of the interaction of social distancing and governmental intervention
 
 See it in action here: https://op12no2.me/toys/social
