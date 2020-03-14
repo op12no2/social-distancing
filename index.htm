@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,99chrome=1" />
+
+<title>social distancing demonstration</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="title"       content="social distancing demonstration" />
+<meta name="description" content="social distancing demonstration" />
+<meta name="keywords"    content="infection model, epidemic, coronavirus, covid19, covid" />
+
+<meta name="viewport" content="width=device-width, initial-scale=0.81">
+
+<style>
+body     {margin:0; padding:0; width: 480px;}
+#graphs  {}
+#text    {font: 1.5em serif; color: #666666; padding: 0 20px 0 20px;}
+#text2   {font: 1em   serif; color: #999999; padding: 0 20px 0 20px;}
+
+.slidecontainer {
+  width: 350px;
+  margin-left: 60px;
+  margin-top: 40px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 35px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 35px;
+  height: 35px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+</style>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous">
+</script>
+
+<script type="text/javascript" src="social.js"></script>
+
+</head>
+<body>
+
+<canvas id="graphs" width="480" height="200" style="border: 0px solid"></canvas>
+
+<form>
+  <div class="slidecontainer">
+    <input class="slider" type="range" id="dslider" min=0 max=100 step=1 value=0>
+  </div>
+  <div class="slidecontainer">
+    <input class="slider" type="range" id="islider" min=0 max=100 step=1 value=0>
+  </div>
+</form>
+
+<div id="text">
+<br><br>
+<b>Social Distancing Demonstration</b>
+<br><br>
+This little demonstration is designed to be used while talking about the
+concepts of social distancing (behavioural changes, self isolation, cancelling large gatherings etc) and 
+governmental intervention whereby a population is effectively in lockdown.
+<br><br>
+The initial white curve shows an epidemic caused by a novel virus introduced
+into a completely susceptible population. The horizontal axis represents 
+time and the vertical axis represents the number of people infected.  
+<br><br>
+The top of the green area represents the limit of our healthcare services.
+If the number of people infected is in the red area it means that our healthcare services
+are overloaded by the fraction of infected people needing care.
+<br><br>
+In this demonstration, without social distancing
+or governmental intervention our healthcare services are
+massively overloaded.
+<br><br>
+The top slider shows how increasingly severe social distancing measures undertaken 
+early and consistently thereafter can spread the load on our healthcare services. 
+<br><br>
+The bottom slider shows how additional temporary governmental intervention can further reduce 
+the load on our healthcare services and delay much of the epidemic until a vaccine can be 
+developed. The position of the slider changes the time at which the intervention is deployed.
+<br><br>
+The model does not show it, but a vaccine could eliminate the delayed epidemic 
+entirely if available early enough and if effective in terms of targetting and seroconversion. 
+<br><br>
+The timing of any intervention is critical because it must happen during the 
+steepest section of the curve.  If a vaccine is not available the delayed epidemic can 
+also overload our healthcare services and further timely interventions may be needed as necessary.
+<br><br>
+Refresh the page to reset and keep up to date with the latest version. 
+This is version <span id="ver">x</span>.
+</div>
+
+<div id="text2">
+<br><br><a target="_blank" href="http://op12no2.me">more epi toys</a><br><br>
+</div>
+
+</body>
