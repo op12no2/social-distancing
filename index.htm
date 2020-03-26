@@ -45,14 +45,14 @@ body     {margin:0; padding:0; width: 480px;}
   appearance: none;
   width: 35px;
   height: 35px;
-  background: #4CAF50;
+  background: #1b4f72;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
   width: 35px;
   height: 35px;
-  background: #4CAF50;
+  background: #1b4f72;
   cursor: pointer;
 }
 </style>
@@ -77,6 +77,9 @@ body     {margin:0; padding:0; width: 480px;}
   <div class="slidecontainer">
     <input class="slider" type="range" id="islider" min=0 max=100 step=1 value=0>
   </div>
+  <div class="slidecontainer">
+    <input class="slider" type="range" id="hslider" min=0 max=100 step=1 value=20>
+  </div>
 </form>
 
 <div id="text">
@@ -84,25 +87,24 @@ body     {margin:0; padding:0; width: 480px;}
 <b>Social Distancing Demonstration</b>
 <br><br>
 This little demonstration is designed to be used while talking about the
-concepts of social distancing (behavioural changes, self isolation, cancelling large gatherings etc) and 
+concepts of social distancing (behavioural changes, self isolation, avoiding large gatherings etc.) and 
 governmental intervention whereby a population is effectively in lockdown.
 <br><br>
 The initial white curve shows an epidemic caused by a novel virus introduced
 into a completely susceptible population. The horizontal axis represents 
 time and the vertical axis represents the number of people infected.  
 <br><br>
-The top of the green area represents the limit of our healthcare services.
-If the number of people infected is in the red area it means that our healthcare services
-are overloaded by the fraction of infected people needing care.
+The top of the lighter area represents the limit of our healthcare services.
+If the number of people infected is in the darker area it means that our healthcare services
+are overloaded by the fraction of infected people needing care. 
 <br><br>
-In this demonstration, without social distancing
-or governmental intervention our healthcare services are
-massively overloaded.
+Without social distancing or governmental intervention our healthcare services can be
+massively overloaded as shown.
 <br><br>
-The top slider shows how increasingly severe social distancing measures undertaken 
+The first slider shows how increasingly active social distancing practices undertaken 
 early and consistently thereafter can spread the load on our healthcare services. 
 <br><br>
-The bottom slider shows how additional temporary governmental intervention can further reduce 
+The second slider shows how additional temporary governmental intervention can further reduce 
 the load on our healthcare services and delay much of the epidemic until a vaccine can be 
 developed. The position of the slider changes the time at which the intervention is deployed.
 <br><br>
@@ -112,6 +114,8 @@ entirely if available early enough and if effective in terms of targetting and s
 The timing of any intervention is critical because it must happen during the 
 steepest section of the curve.  If a vaccine is not available the delayed epidemic can 
 also overload our healthcare services and further timely interventions may be needed as necessary.
+<br><br>
+The third slider simply moves the healthcare threshold.
 <br><br>
 Refresh the page to reset and keep up to date with the latest version. 
 This is version <span id="ver">x</span>.

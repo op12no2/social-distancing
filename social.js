@@ -1,5 +1,5 @@
 
-var version = '6.0';
+var version = '8.0';
 
 // globals
 
@@ -16,13 +16,13 @@ var gz      = 160;                    // model iterations
 var gres    = 100;                    // slider resolution
 var gcrate  = (gcmax - gcmin) / gres; // scaling factor for contact rate slider
 var gpeak   = 0;                      // the peak of the second curve 
-var gh      = 50;                     // healthcare threshold - probably way less than this in reality
 var gx      = 480;                    // canvas width
 var gy      = 200;                    // canvas height
 var gw      = 3;                      // line width
+var gh      = 0;                      // healthcare threshold in pixels 
 
-var gColOverload  = "#DB5F40";
-var gColCapacity  = "#A8D49A";
+var gColOverload  = "#1b4f72";
+var gColCapacity  = "#216a8c";
 var gColCurve1    = "#FFFFFF";
 var gColCurve2    = "#FFFFFF";
 var gColCurve3    = "#FFFFFF";
@@ -156,7 +156,7 @@ function sir3() {
 
   ctx.stroke();
 }
-
+var hslide      = 20; // healthcare slider
 var dslide      = 0;  // social distancing slider
 var islide      = 0;  // social intervention slider
 var islideCache = 0;
@@ -172,14 +172,28 @@ function gcminUpdate() {
   gcmin  = gcmax - dslide * gcrate;
 }
 
+function ghUpdate () {
+  gh = hslide * (gy / 100.0);
+}
+
 $(function() {
 
   gcminUpdate();
+  ghUpdate();
 
   $('#ver').html(version);
 
   canvas = document.getElementById("graphs");
   ctx    = canvas.getContext("2d");
+
+  $('#hslider').on('input', function (e) {
+    hslide = parseInt($('#hslider').val());
+    ghUpdate()
+    sir1()
+    sir2();
+    islideUpdate(); 
+    sir3();
+  });
 
   $('#dslider').on('input', function (e) {
     dslide = parseInt($('#dslider').val());
