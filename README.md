@@ -26,4 +26,4 @@ The timing of any intervention is critical because it must happen during the ste
 
 The third slider simply moves the healthcare threshold.
 
-Refresh the page to reset and keep up to date with the latest version. This is version 8.0.
+
